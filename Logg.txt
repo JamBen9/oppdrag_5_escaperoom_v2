@@ -1,0 +1,3 @@
+Logg
+Jeg glemte å lage logg fra starten, men jeg forbedret gjentagelsene i css og laget hele spillet fra scratch. Denne gangen brukte jeg mindre ai og fokuserte mer på å lære fra den. jeg ser på javascript på en annen måte nå
+men har fortsatt en del og lære. For det meste brukte jeg css og HTML V1 var mye KI bruk men V1 var minimalt.
