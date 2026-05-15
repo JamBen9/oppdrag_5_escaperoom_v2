@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keypad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="scene">
+        <img class="background" src="img/keypad.jpg" alt="keypad">
+        <nav class="overlay">
+            <div class="keypad">
+                <input type="text" id="code" maxlength="4" placeholder="Enter code">
+                <button onclick="clearCode()">Clear</button>
+                <button onclick="submitCode()">Submit</button>
+            </div>
+            <a class="arrow arrow-left" href="outside.html" title="Back">
+                <img src="img/venstre-arrow.png" alt="left arrow">
+            </a>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
