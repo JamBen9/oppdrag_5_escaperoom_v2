@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Room - Inni toalettet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-scene="inside_do">
+    <div class="scene">
+        <img class="background" src="img/xray_toalett.jpg" alt="r�ntgenbilde av toalett">
+        <div class="overlay">
+            <button type="button" class="hitbox stein-hitbox" data-action="pickup-item" data-item="stein" title="Plukk opp steinen"></button>
+            <img class="overlay-icon stein-icon" src="img/stein.png" alt="stein">
+            <a class="arrow arrow-left" href="toilet.html" title="Tilbake til toalettet">
+                <img src="img/venstre-arrow.png" alt="venstre pil">
+            </a>
+        </div>
+    </div>
+    <button id="restart-game" class="restart-button">Start på nytt</button>
+    <div id="message" class="game-message"></div>
+    <script src="script.js"></script>
+</body>
+</html>
