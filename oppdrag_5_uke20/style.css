@@ -1,0 +1,342 @@
+/* ----
+   FELLES FOR ALLE SIDER
+   Grunnleggende stil for hele nettstedet
+   ---- */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+.scene {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.background {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.background-dark {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle at center, #333 0%, #050505 100%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 20;
+}
+
+/* ----
+   PILER
+   Stor hvit sirkel med piler for å navigere
+   ---- */
+
+.arrow,
+.hitbox,
+.keypad-button,
+#restart-game {
+    pointer-events: auto;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    width: 105px;
+    height: 105px;
+    padding: 9px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    z-index: 30;
+    transform: translateY(-50%);
+}
+
+.arrow img {
+    width: 144px;
+    height: auto;
+}
+
+.arrow-left {
+    left: 18px;
+}
+
+.arrow-right {
+    right: 20px;
+}
+
+/* ----
+ HITBOXES
+   Usynlige knapper for å interagere med objekter
+   ---- */
+
+.hitbox {
+    position: absolute;
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ----
+   MELDINGER (SYSTEM FEEDBACK)
+   Viser korte meldinger i bunnen av skjermen
+   ---- */
+
+.game-message {
+    position: fixed;
+    left: 50%;
+    bottom: 110px;
+    transform: translateX(-50%);
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 999px;
+    color: #fff;
+    font-size: 0.95rem;
+    z-index: 130;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.game-message.show {
+    animation: messageShow 0.25s ease forwards, messageHide 0.25s ease 2.2s forwards;
+}
+
+@keyframes messageShow {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes messageHide {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* ----
+   START PÅ NYTT KNAPP
+   Knapp for å nullstille spillet
+   ---- */
+
+.restart-button {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    padding: 8px 16px;
+    background: rgba(255, 0, 0, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    z-index: 140;
+    transition: background 0.2s ease;
+}
+
+.restart-button:hover {
+    background: rgba(255, 0, 0, 1);
+}
+
+/* ----
+   IKONER (OVERLAY-ELEMENTER)
+   Steder og størrelse for gjenstander på skjermen
+   ---- */
+
+.overlay-icon {
+    position: absolute;
+    pointer-events: none;
+}
+
+.padlock-icon {
+    top: 35%;
+    left: 52%;
+    width: 80px;
+    transform: translate(-50%, -50%);
+}
+
+.pickaxe-icon {
+    bottom: 30%;
+    left: 46%;
+    width: 100px;
+    transform: translateX(-50%);
+}
+
+.kim-door {
+    top: calc(50% + 65px);
+    left: 30px;
+    width: 160px;
+}
+
+.kim-door-hitbox {
+    top: calc(50% + 65px);
+    left: 30px;
+    width: 160px;
+    height: 160px;
+}
+
+.toilet-hitbox {
+    top: 52%;
+    left: 36%;
+    width: 22%;
+    height: 22%;
+}
+
+.wall-hitbox {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.padlock-hitbox {
+    top: 30%;
+    left: 50%;
+    width: 20%;
+    height: 22%;
+}
+
+.door-hitbox {
+    top: 30%;
+    left: 50%;
+    width: 18%;
+    height: 28%;
+}
+
+.stein-hitbox {
+    bottom: 28%;
+    left: 46%;
+    width: 14%;
+    height: 18%;
+}
+
+.pickaxe-hitbox {
+    bottom: 30%;
+    left: 46%;
+    width: 18%;
+    height: 22%;
+}
+.stein-icon {
+    bottom: 26%;
+    left: 46%;
+    width: 70px;
+    transform: translateX(-50%);
+}
+.hull-hitbox {
+    top: 55%;
+    left: 40%;
+    width: 20%;
+    height: 18%;
+}
+
+/* ----
+   KODETELEFON (KEYPAD)
+   Brukergrensesnitt for innmatting av kode
+   ---- */
+
+.keypad {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(360px, 92%);
+    background: rgba(16, 16, 16, 0.92);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    padding: 20px;
+    z-index: 110;
+    display: grid;
+    gap: 12px;
+}
+
+.keypad-display {
+    width: 100%;
+    min-height: 52px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    letter-spacing: 0.22rem;
+    color: #fff;
+}
+
+.keypad-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.keypad-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 16px 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.keypad-button:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* ----
+   SLUTTVIDEOENE
+   Fullskjermsvideo på slutten av spillet
+   ---- */
+
+#ending-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    background: #000;
+}
+
+/* ----
+   MOBIL/RESPONSIV DESIGN
+   Justeringer for små skjermer
+   ---- */
+
+@media (max-width: 640px) {
+    .arrow {
+        width: 56px;
+    }
+
+    .kim-door {
+        width: 130px;
+    }
+
+    .kim-door-hitbox {
+        width: 130px;
+        height: 130px;
+    }
+}

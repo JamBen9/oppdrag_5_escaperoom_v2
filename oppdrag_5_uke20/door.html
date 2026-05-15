@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dør</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-scene="door">
+    <div class="scene">
+        <img class="background" src="img/celle_dør.png" alt="celle med dør og hengelås">
+        <div class="overlay">
+            <button type="button" class="hitbox padlock-hitbox" data-action="unlock-lock" title="Klikk på hengelåsen"></button>
+            <button type="button" class="hitbox door-hitbox hidden" data-action="open-door" title="åpne døren"></button>
+            <img class="overlay-icon padlock-icon" src="img/padlock.png" alt="hengelås">
+            <a class="arrow arrow-left" href="index.html" title="Tilbake til cellen">
+                <img src="img/venstre-arrow.png" alt="venstre pil">
+            </a>
+        </div>
+    </div>
+    <button id="restart-game" class="restart-button">Start på nytt</button>
+    <div id="message" class="game-message"></div>
+    <script src="script.js"></script>
+</body>
+</html>
